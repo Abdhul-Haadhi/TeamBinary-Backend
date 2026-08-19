@@ -1,5 +1,6 @@
 package com.example.TeamBinary_Backend.Entities;
 
+import com.example.TeamBinary_Backend.Enum.NetworkStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

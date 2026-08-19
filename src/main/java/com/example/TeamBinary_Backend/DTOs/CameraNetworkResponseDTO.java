@@ -1,6 +1,6 @@
 package com.example.TeamBinary_Backend.DTOs;
 
-import com.example.TeamBinary_Backend.Entities.NetworkStatus;
+import com.example.TeamBinary_Backend.Enum.NetworkStatus;
 
 public class CameraNetworkResponseDTO {
     private Long          networkId;

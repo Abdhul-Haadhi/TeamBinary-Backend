@@ -1,4 +1,4 @@
-package com.example.TeamBinary_Backend.Entities;
+package com.example.TeamBinary_Backend.Enum;
 
 public enum NetworkStatus {
     ACTIVE,

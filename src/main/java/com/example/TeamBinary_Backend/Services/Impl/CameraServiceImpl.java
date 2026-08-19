@@ -4,7 +4,7 @@ import com.example.TeamBinary_Backend.DTOs.CameraRequestDTO;
 import com.example.TeamBinary_Backend.DTOs.CameraResponseDTO;
 import com.example.TeamBinary_Backend.Entities.Camera;
 import com.example.TeamBinary_Backend.Entities.CameraNetwork;
-import com.example.TeamBinary_Backend.Entities.CameraStatus;
+import com.example.TeamBinary_Backend.Enum.CameraStatus;
 import com.example.TeamBinary_Backend.Repositories.CameraNetworkRepository;
 import com.example.TeamBinary_Backend.Repositories.CameraRepository;
 import com.example.TeamBinary_Backend.Services.CameraService;

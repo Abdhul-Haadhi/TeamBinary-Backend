@@ -1,6 +1,7 @@
 package com.example.TeamBinary_Backend.Entities;
 
 
+import com.example.TeamBinary_Backend.Enum.CameraStatus;
 import jakarta.persistence.*;
 
 @Entity

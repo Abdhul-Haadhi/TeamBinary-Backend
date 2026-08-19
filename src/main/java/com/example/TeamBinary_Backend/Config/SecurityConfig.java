@@ -18,8 +18,8 @@ public class SecurityConfig {
                 .cors(cors -> {})
                 .authorizeHttpRequests(auth -> auth
 
-                        // Allow browser CORS preflight
-                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+//                        // Allow browser CORS preflight
+//                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 
                         // Authentication endpoints
                         .requestMatchers("/api/auth/**").permitAll()

@@ -3,11 +3,9 @@ package com.example.TeamBinary_Backend.Repositories;
 import java.util.List;
 
 import com.example.TeamBinary_Backend.Entities.Camera;
-import com.example.TeamBinary_Backend.Entities.CameraStatus;
+import com.example.TeamBinary_Backend.Enum.CameraStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface CameraRepository extends JpaRepository<Camera, Long> {
