@@ -24,4 +24,6 @@ public interface CameraRepository extends JpaRepository<Camera, Long> {
 
     // Count active cameras in a network
     int countByNetwork_NetworkIdAndStatus(Long networkId, CameraStatus status);
+
+
 }

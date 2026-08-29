@@ -17,10 +17,17 @@ public class CctvCameraEntity {
     private String cameraUrl;
     private String status;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "organization_id",
+            nullable = false
+    )
+    private OrganizationEntity organization;
+
     public CctvCameraEntity() {
     }
 
-    public CctvCameraEntity(Long id, String cameraName, String location, String cameraType, String description, String cameraUrl, String status) {
+    public CctvCameraEntity(Long id, String cameraName, String location, String cameraType, String description, String cameraUrl, String status, OrganizationEntity organization) {
         this.id = id;
         this.cameraName = cameraName;
         this.location = location;
@@ -28,6 +35,7 @@ public class CctvCameraEntity {
         this.description = description;
         this.cameraUrl = cameraUrl;
         this.status = status;
+        this.organization = organization;
     }
 
     public Long getId() {
@@ -84,5 +92,13 @@ public class CctvCameraEntity {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public OrganizationEntity getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(OrganizationEntity organization) {
+        this.organization = organization;
     }
 }

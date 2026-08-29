@@ -1,15 +1,26 @@
 package com.example.TeamBinary_Backend.DTOs;
 
 public class UserDto {
+
+    private String organizationCode;
     private String email;
     private String password;
 
     public UserDto() {
     }
 
-    public UserDto(String email, String password) {
+    public UserDto(String organizationCode, String email, String password) {
+        this.organizationCode = organizationCode;
         this.email = email;
         this.password = password;
+    }
+
+    public String getOrganizationCode() {
+        return organizationCode;
+    }
+
+    public void setOrganizationCode(String organizationCode) {
+        this.organizationCode = organizationCode;
     }
 
     public String getEmail() {

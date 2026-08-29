@@ -34,7 +34,7 @@ public class CameraNetworkController {
     }
 
     // GET /api/networks  — get all networks
-    @GetMapping("")
+    @GetMapping
     public ResponseEntity<List<CameraNetworkResponseDTO>> getAllNetworks() {
         return ResponseEntity.ok(networkService.getAllNetworks());
     }
