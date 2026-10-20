@@ -102,6 +102,7 @@ public class SecurityConfig {
 
                                 .requestMatchers("/api/number-plate/**").hasAnyRole("ADMIN", "INVESTIGATOR")
                                 .requestMatchers("/api/vehicle/**").hasAnyRole("ADMIN", "INVESTIGATOR")
+                                .requestMatchers("/api/vehicles/**").hasAnyRole("ADMIN", "INVESTIGATOR")
                                 .requestMatchers("/api/vehicle-search/**").hasAnyRole("ADMIN", "INVESTIGATOR")
                                 .requestMatchers("/api/reports/**").hasAnyRole("ADMIN", "INVESTIGATOR")
 

@@ -13,26 +13,38 @@ public class VehicleSearchSessionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    // IMAGE or TEXT
+    @Column(nullable = false, length = 20)
+    private String searchType;
+
+    @Column(length = 255)
     private String originalFileName;
-    private LocalDateTime searchedAt;
-    private String status;
+
+    @Column(length = 500)
+    private String queryDescription;
+
+    @Column(length = 50)
+    private String vehicleType;
+
+    @Column(length = 50)
+    private String color;
+
+    private LocalDateTime createdAt;
+
+    private Integer videosScanned;
+
+    private Integer totalMatches;
 
     @OneToMany(
             mappedBy = "searchSession",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<VehicleSearchResultEntity> results = new ArrayList<>();
+    private List<VehicleSearchMatchEntity> matches =
+            new ArrayList<>();
 
     public VehicleSearchSessionEntity() {
-    }
-
-    public VehicleSearchSessionEntity(Long id, String originalFileName, LocalDateTime searchedAt, String status, List<VehicleSearchResultEntity> results) {
-        this.id = id;
-        this.originalFileName = originalFileName;
-        this.searchedAt = searchedAt;
-        this.status = status;
-        this.results = results;
     }
 
     public Long getId() {
@@ -43,6 +55,14 @@ public class VehicleSearchSessionEntity {
         this.id = id;
     }
 
+    public String getSearchType() {
+        return searchType;
+    }
+
+    public void setSearchType(String searchType) {
+        this.searchType = searchType;
+    }
+
     public String getOriginalFileName() {
         return originalFileName;
     }
@@ -51,27 +71,61 @@ public class VehicleSearchSessionEntity {
         this.originalFileName = originalFileName;
     }
 
-    public LocalDateTime getSearchedAt() {
-        return searchedAt;
+    public String getQueryDescription() {
+        return queryDescription;
     }
 
-    public void setSearchedAt(LocalDateTime searchedAt) {
-        this.searchedAt = searchedAt;
+    public void setQueryDescription(String queryDescription) {
+        this.queryDescription = queryDescription;
     }
 
-    public String getStatus() {
-        return status;
+    public String getVehicleType() {
+        return vehicleType;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
     }
 
-    public List<VehicleSearchResultEntity> getResults() {
-        return results;
+    public String getColor() {
+        return color;
     }
 
-    public void setResults(List<VehicleSearchResultEntity> results) {
-        this.results = results;
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Integer getVideosScanned() {
+        return videosScanned;
+    }
+
+    public void setVideosScanned(Integer videosScanned) {
+        this.videosScanned = videosScanned;
+    }
+
+    public Integer getTotalMatches() {
+        return totalMatches;
+    }
+
+    public void setTotalMatches(Integer totalMatches) {
+        this.totalMatches = totalMatches;
+    }
+
+    public List<VehicleSearchMatchEntity> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(
+            List<VehicleSearchMatchEntity> matches
+    ) {
+        this.matches = matches;
     }
 }

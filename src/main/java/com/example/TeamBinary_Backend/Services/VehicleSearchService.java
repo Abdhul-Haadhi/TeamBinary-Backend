@@ -5,5 +5,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface VehicleSearchService {
 
-    VehicleSearchResponseDto searchVehicle(MultipartFile file);
+    VehicleSearchResponseDto searchByImage(
+            MultipartFile file
+    );
+
+    VehicleSearchResponseDto searchByDescription(
+            String description
+    );
 }

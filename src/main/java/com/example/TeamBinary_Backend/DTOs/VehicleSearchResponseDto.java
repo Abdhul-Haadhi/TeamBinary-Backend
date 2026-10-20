@@ -1,28 +1,39 @@
 package com.example.TeamBinary_Backend.DTOs;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class VehicleSearchResponseDto {
 
     private boolean success;
-    private Long searchSessionId;
+
     private String filename;
-    private String detectedPlate;
-    private Double queryOcrConfidence;
-    private String status;
-    private List<VehicleSearchResultDto> results;
+
+    private String query;
+
+    private String vehicleType;
+
+    private String color;
+
+    private Double detectionConfidence;
+
+    private Integer videosScanned;
+
+    private String message;
+
+    private Long searchSessionId;
+
+    // Image search uses "matches".
+    private List<Map<String, Object>> matches =
+            new ArrayList<>();
+
+    // Text search uses "results".
+    private List<Map<String, Object>> results =
+            new ArrayList<>();
 
     public VehicleSearchResponseDto() {
-    }
-
-    public VehicleSearchResponseDto(boolean success, Long searchSessionId, String filename, String detectedPlate, Double queryOcrConfidence, String status, List<VehicleSearchResultDto> results) {
-        this.success = success;
-        this.searchSessionId = searchSessionId;
-        this.filename = filename;
-        this.detectedPlate = detectedPlate;
-        this.queryOcrConfidence = queryOcrConfidence;
-        this.status = status;
-        this.results = results;
     }
 
     public boolean isSuccess() {
@@ -33,14 +44,6 @@ public class VehicleSearchResponseDto {
         this.success = success;
     }
 
-    public Long getSearchSessionId() {
-        return searchSessionId;
-    }
-
-    public void setSearchSessionId(Long searchSessionId) {
-        this.searchSessionId = searchSessionId;
-    }
-
     public String getFilename() {
         return filename;
     }
@@ -49,35 +52,81 @@ public class VehicleSearchResponseDto {
         this.filename = filename;
     }
 
-    public String getDetectedPlate() {
-        return detectedPlate;
+    public String getQuery() {
+        return query;
     }
 
-    public void setDetectedPlate(String detectedPlate) {
-        this.detectedPlate = detectedPlate;
+    public void setQuery(String query) {
+        this.query = query;
     }
 
-    public Double getQueryOcrConfidence() {
-        return queryOcrConfidence;
+    public String getVehicleType() {
+        return vehicleType;
     }
 
-    public void setQueryOcrConfidence(Double queryOcrConfidence) {
-        this.queryOcrConfidence = queryOcrConfidence;
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
     }
 
-    public String getStatus() {
-        return status;
+    public String getColor() {
+        return color;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public List<VehicleSearchResultDto> getResults() {
+    public Double getDetectionConfidence() {
+        return detectionConfidence;
+    }
+
+    public void setDetectionConfidence(
+            Double detectionConfidence
+    ) {
+        this.detectionConfidence = detectionConfidence;
+    }
+
+    public Integer getVideosScanned() {
+        return videosScanned;
+    }
+
+    public void setVideosScanned(Integer videosScanned) {
+        this.videosScanned = videosScanned;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Long getSearchSessionId() {
+        return searchSessionId;
+    }
+
+    public void setSearchSessionId(Long searchSessionId) {
+        this.searchSessionId = searchSessionId;
+    }
+
+    public List<Map<String, Object>> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(
+            List<Map<String, Object>> matches
+    ) {
+        this.matches = matches;
+    }
+
+    public List<Map<String, Object>> getResults() {
         return results;
     }
 
-    public void setResults(List<VehicleSearchResultDto> results) {
+    public void setResults(
+            List<Map<String, Object>> results
+    ) {
         this.results = results;
     }
 }
